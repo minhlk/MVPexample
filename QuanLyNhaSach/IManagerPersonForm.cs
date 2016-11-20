@@ -13,6 +13,7 @@ namespace QuanLyNhaSach
         person Person { get; set; }
         IList<person> updateListPerson { get; set; }
          Presenter.PersonPresenter Presenter {  set; }
+        int selectedPerson { get;  }
         void Log(string mes);
     }
 }

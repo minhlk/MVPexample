@@ -40,8 +40,17 @@ namespace QuanLyNhaSach.Presenter
             person p = new AppData.person();
             p = view.Person;
             repository.savePerson(p);
-            view.Log("added successfull");
+            view.Log("added successfully");
             updateListPerson();
+
+        }
+        public void delPerson() {
+
+            int id = view.selectedPerson;
+            repository.delPerson(id);
+            view.Log("deleted successfully");
+            updateListPerson();
+
 
         }
 

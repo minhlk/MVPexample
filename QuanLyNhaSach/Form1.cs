@@ -59,6 +59,21 @@ namespace QuanLyNhaSach
             }
         }
 
+        public int selectedPerson
+        {
+            get
+            {
+                int row = dataGridView1.CurrentCell.RowIndex;
+                //int col = dataGridView1.CurrentCell.ColumnIndex;
+                
+                return int.Parse((dataGridView1.Rows[row].Cells[0].Value.ToString()));  //get current row index
+
+
+            }
+
+          
+        }
+
         public void Log(string mes)
         {
             MessageBox.Show(mes);
@@ -72,6 +87,11 @@ namespace QuanLyNhaSach
         private void button1_Click(object sender, EventArgs e)
         {
             Presenter.addPerson();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Presenter.delPerson();
         }
     }
 }

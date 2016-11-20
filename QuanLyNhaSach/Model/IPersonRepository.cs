@@ -13,6 +13,7 @@ namespace QuanLyNhaSach.Model
         IList<person> getListPerson();
         person getPerson(int id);
         void savePerson(person p);
+        void delPerson(int id);
        
 
     }

@@ -10,7 +10,15 @@ namespace QuanLyNhaSach.Model
     class PersonRepository : IPersonRepository
     {
         dbtestEntities entity=new dbtestEntities();
-        
+
+        public void delPerson(int id)
+        {
+            person p = (from c in entity.people where c.id == id select c).FirstOrDefault();
+            if(p!=null)
+            entity.people.Remove(p);
+            entity.SaveChanges();
+        }
+
         public IList<person> getListPerson()
         {
             return entity.people.ToList();
